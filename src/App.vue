@@ -1,15 +1,31 @@
 <template>
+<div>
+  {{users}}
+  <ul>
+    <li :key="meyve" v-for="(meyve,key) in meyveler">{{key+meyve}}</li>
+  </ul>
+</div>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HelloWorld msg="Mijn eerste Vue.js Project"/>
+  <my-button></my-button>
+
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import MyButton from './components/MyButton.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    MyButton
+  },
+  data () {
+    return {
+      users: 'Mehmet',
+      meyveler: ['ali', 'erma', 'xvvcx']
+    }
   }
 }
 </script>
